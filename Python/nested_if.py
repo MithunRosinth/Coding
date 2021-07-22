@@ -1,4 +1,4 @@
-a=100
+a=1000
 if(a>160):
 	print("You are right 1")
 elif(a>170):
@@ -9,3 +9,12 @@ elif(a>90):
 	print("You are right 4")
 else:
 	print("You are wrong")
+
+"""
+if(condition):
+	execute
+elif(condition):
+	execute3
+else:
+	execute2
+"""

@@ -3,6 +3,7 @@ while(a>0):
     print("Still running",a)
     a-=1
 
+
 a=5
 while(a>0):
     if(a%2==0):
@@ -10,6 +11,7 @@ while(a>0):
     else:
         print("It's Odd",a)
     a-=1
+
 
 """
 a=5
