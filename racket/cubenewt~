@@ -1,0 +1,16 @@
+#lang racket
+#lang racket
+(define (cubrt x)
+  (define (good-enough? guess)
+    (< (abs (- (cube guess x)) 0.0001))
+  (define (improve guess)
+    (/ (+ (/ x (square y)) (* 2 y)) 3))
+  (define (cubrt-iter guess)
+    (if(good-enough? guess x)
+       guess
+       (cubrt-iter (improve guess x) x)))
+   (define(square x) (* x x))
+   (define(cube x) (* x (square x)))
+  (sqrt-iter 1.0))
+
+(cubrt 4)

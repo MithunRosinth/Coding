@@ -1,0 +1,21 @@
+#lang racket
+
+(+ (* (+ (* 4 2) (+ 3 5)) 3) (/ (- 10 7) 6))
+
+(define (sign number)
+  (cond ((< number 0) 'negative)
+        ((= number 0) 'zero)
+        (else 'positive)))
+
+(sign 10)
+(sign -1)
+(sign 0)
+
+(define (ab+c a b c)
+  (define (mul a b)
+    (cond ((= a 0)
+           (+ b b)
+           (- a 1))))
+  (+ c (mul a b)))
+
+(ab+c 1 2 3)
