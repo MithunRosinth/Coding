@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<head>
+    <title>Forms</title>
+    <style>
+        table{
+            border: 1px solid black;
+            width: 50%;
+            background-color: #dedede;
+            margin-left: 25%;
+            margin-top: 2%;
+        }
+        td{
+            width: 30%;
+            margin: 10px;
+        }
+        btn{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <h3 align="center" style="margin-top: 5%; "><u>A Sample Survey Form</u></h3>
+    <table>
+    <p align="center" style="margin-top: 1%; color:red; "><u>Help us in filling the form to prove our self</u></p>
+        <form>
+        <tr>
+            <td style="text-align: right;">* Name</td>
+            <td><input  type="text" style="width: 90%;" placeholder="Enter your name" required></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">* Email</td>
+            <td><input type="text" style="width: 90%;" placeholder="Enter your Email" required></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">* Age</td>
+            <td><input type="number" style="width: 90%;" min="1" max="100" placeholder="Enter your Age" required></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">Which option best describes your current role?</td>
+            <td style="text-align: left;" ><select>
+                <option>Student</option>
+                <option>Teacher</option>
+
+            </select></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">* How likely is that you would recommend freeCodeCamp to a friend?</td>
+            <td ><br>
+  <input type="radio" id="html" name="fav_language" value="HTML">
+  <label for="html">Definitely</label><br>
+  <input type="radio" id="css" name="fav_language" value="CSS">
+  <label for="css">May be</label><br>
+  <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+  <label for="javascript">Not sure</label>
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">What do you like most in FCC?</td>
+            <td style="text-align: left;" ><select>
+                <option>Select an option</option>
+                <option>responsive</option>
+                <option>innovation</option>
+            </select></td>
+        </tr>
+        <tr>
+            <td style="text-align: right;">Things that should be improved in the future (Check all that apply):</td>
+            <td ><br>
+  <input type="checkbox">Front-End Projects<br>
+  <input type="checkbox">Back-End Projects<br>
+  <input type="checkbox">Data Visualization
+            </td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr style="text-align: center;">
+            <td colspan="2" ><input type="submit" class="btn" ></td>
+        </tr>
+
+        </form>
+    </table>
+</body>
+</html>
