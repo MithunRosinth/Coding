@@ -1,0 +1,38 @@
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+
+<!DOCTYPE html>
+<p>
+    <label>Marks</label>
+    <input id="marks" type="number" placeholder="marks"
+    oninput="gradeAssign(this.value)"
+    onchange="gradeAssign(this.value)">
+</p>
+<p>Grade: <span id="grade"></span></p>
+<script>
+function gradeAssign(marks){
+var msg = 'enter the percentage of student:';
+var a = marks;
+if(a>85)
+    {
+      document.getElementById("grade").innerHTML ='Grade - A-';}
+else if(a<=85 && a>80)
+    {
+      document.getElementById("grade").innerHTML ='Grade - A-';}
+else if(a>70 && a<=80)
+    {
+      document.getElementById("grade").innerHTML ='Grade - B';}
+else if(a>60 && a<=70)
+    {
+      document.getElementById("grade").innerHTML ='Grade - C-';}
+else if(a>40 && a<=60)
+    {
+      document.getElementById("grade").innerHTML ='Grade - D-';}
+else if(a<=40)
+    {
+      if(a>=35)
+        {
+          document.getElementById("grade").innerHTML ='Grade - E-';}
+      else
+        {document.getElementById("grade").innerHTML ='Grade - E- Candidate failed';}}}
+</script>
