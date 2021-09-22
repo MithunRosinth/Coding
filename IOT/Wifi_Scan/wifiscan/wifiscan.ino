@@ -1,4 +1,8 @@
 #include "ESP8266WiFi.h"
+
+const char* ssid     = "yourssid";
+const char* password = "yourpassword";
+
 void setup()
 {
   Serial.begin(115200);
@@ -35,6 +39,8 @@ void loop()
     }
   }
   Serial.println("");
+  WiFi.begin(ssid, password);
+  WiFi.disconnect();
   // Wait a bit before scanning again
   delay(5000);
 }
