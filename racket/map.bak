@@ -1,0 +1,13 @@
+#lang racket
+;abs function over a list without map
+(define abs-all
+  (lambda (ls)
+    (if (null? ls)
+        '()
+        (cons (abs (car ls))
+              (abs-all (cdr ls))))))
+
+;abs function over a list using map
+(define abs-all
+  (lambda (ls)
+    (map abs ls)))
