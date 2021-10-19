@@ -1,0 +1,5 @@
+#lang racket
+(define (append-test lhs rhs)
+  (if (empty? lhs)
+      rhs
+      (cons (car lhs) (append-test (cdr lhs) rhs))))
