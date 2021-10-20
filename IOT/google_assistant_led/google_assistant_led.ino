@@ -6,7 +6,7 @@
 #define MQTT_SERV "io.adafruit.com"
 #define MQTT_PORT 1883
 #define MQTT_NAME "mithun_amrita"
-#define MQTT_PASS "aio_IjSA31izy7A2htp4iM5KjAkYWaUI"
+#define MQTT_PASS ""
 
 WiFiClient client;
 Adafruit_MQTT_Client mqtt(&client, MQTT_SERV, MQTT_PORT, MQTT_NAME, MQTT_PASS);
