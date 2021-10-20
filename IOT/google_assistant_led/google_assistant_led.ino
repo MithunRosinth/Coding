@@ -8,7 +8,6 @@
 #define MQTT_NAME "mithun_amrita"
 #define MQTT_PASS "aio_IjSA31izy7A2htp4iM5KjAkYWaUI"
 
-int led = D7;
 WiFiClient client;
 Adafruit_MQTT_Client mqtt(&client, MQTT_SERV, MQTT_PORT, MQTT_NAME, MQTT_PASS);
 Adafruit_MQTT_Subscribe onoff = Adafruit_MQTT_Subscribe(&mqtt, MQTT_NAME "/f/ONOF");
@@ -17,11 +16,8 @@ Adafruit_MQTT_Publish LightsStatus = Adafruit_MQTT_Publish(&mqtt, MQTT_NAME "/f/
 void setup()
 {
   Serial.begin(9600);
-  pinMode(LED_BUILTIN, OUTPUT);
   Serial.print("\n\nConnecting Wifi>");
   WiFi.begin(WIFI_SSID, WIFI_PASS);
-  digitalWrite(LED_BUILTIN, LOW);
-
   while (WiFi.status() != WL_CONNECTED)
   {
     Serial.print(">");
@@ -29,9 +25,8 @@ void setup()
   }
   Serial.println("OK!");
   mqtt.subscribe(&onoff);
-  pinMode(led, OUTPUT);
-  digitalWrite(LED_BUILTIN, HIGH);
-  digitalWrite(led, LOW);
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, LOW);
 
 }
 
@@ -47,12 +42,12 @@ void loop()
       Serial.println((char*) onoff.lastread);
       if (!strcmp((char*) onoff.lastread, "ON"))
       {
-        digitalWrite(led, HIGH);
+        digitalWrite(LED_BUILTIN, HIGH);
         LightsStatus.publish("ON");
       }
       else if (!strcmp((char*) onoff.lastread, "OFF"))
       {
-        digitalWrite(led, LOW);
+        digitalWrite(LED_BUILTIN, LOW);
         LightsStatus.publish("OFF");
       }
       else
