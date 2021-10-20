@@ -1,0 +1,6 @@
+#lang racket
+(require pict/tree-layout)
+(tree-layout [#:pict node-pict] child ...) → tree-layout?
+
+  node-pict : (or/c #f pict?) = #f
+  child : (or/c tree-layout? tree-edge? #f)
