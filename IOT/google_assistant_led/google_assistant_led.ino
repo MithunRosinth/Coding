@@ -5,7 +5,7 @@
 #define WIFI_PASS ""
 #define MQTT_SERV "io.adafruit.com"
 #define MQTT_PORT 1883
-#define MQTT_NAME "mithun_amrita"
+#define MQTT_NAME ""
 #define MQTT_PASS ""
 
 WiFiClient client;
@@ -68,11 +68,8 @@ void MQTT_connect()
   {
     return;
   }
-
   int8_t ret;
-
   mqtt.disconnect();
-
   Serial.print("Connecting to MQTT... ");
   uint8_t retries = 3;
   while ((ret = mqtt.connect()) != 0)
