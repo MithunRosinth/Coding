@@ -1,7 +1,4 @@
-const int LM_35 = A0;  
-int input_val = 0;
-float temp = 0;
-
+#include <ESP8266WiFi.h>
 #include "Adafruit_MQTT.h"
 #include "Adafruit_MQTT_Client.h"
 #define WIFI_SSID ""
@@ -10,7 +7,13 @@ float temp = 0;
 #define MQTT_PORT 1883
 #define MQTT_NAME ""
 #define MQTT_PASS ""
+WiFiClient client;
+Adafruit_MQTT_Client mqtt(&client, MQTT_SERV, MQTT_PORT, MQTT_NAME, MQTT_PASS);
 Adafruit_MQTT_Publish roomtemp = Adafruit_MQTT_Publish(&mqtt, MQTT_NAME "/f/roomtemp");
+
+const int LM_35 = A0;  
+int input_val = 0;
+float temp = 0;
 
 void setup() {
    Serial.begin(9600);
