@@ -3,7 +3,7 @@
 #include "Adafruit_MQTT_Client.h"
 #define WIFI_SSID ""
 #define WIFI_PASS ""
-#define MQTT_SERV "io.adafruit.com"
+#define MQTT_SERV ""
 #define MQTT_PORT 1883
 #define MQTT_NAME ""
 #define MQTT_PASS ""

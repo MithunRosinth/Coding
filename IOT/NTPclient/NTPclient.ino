@@ -3,7 +3,7 @@
 #include <WiFiUdp.h>
 
 // Replace with your network credentials
-const char *ssid     = "VVMC_Guest";
+const char *ssid     = "OnePlus 7";
 const char *password = "12345678";
 
 // Define NTP Client to get time
@@ -28,14 +28,7 @@ void setup() {
     delay(500);
     Serial.print(".");
   }
-
-// Initialize a NTPClient to get time
   timeClient.begin();
-  // Set offset time in seconds to adjust for your timezone, for example:
-  // GMT +1 = 3600
-  // GMT +8 = 28800
-  // GMT -1 = -3600
-  // GMT 0 = 0
   timeClient.setTimeOffset(0);
 }
 
