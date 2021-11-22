@@ -1,0 +1,11 @@
+#lang racket
+(require sdraw)
+(define x '(a b))
+(sdraw (cons x x) #:null-style '/)
+(sdraw (cons (list 'a 'b) (list 'a 'b)) #:null-style '/)
+(define z1 (cons x x))
+(define z2 (cons (list 'a 'b) (list 'a 'b)))
+(car z1)
+(car z2)
+(cdr z1)
+(cdr z2)
