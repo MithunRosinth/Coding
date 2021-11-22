@@ -1,5 +1,4 @@
 #lang racket
-(require sdraw)
 (define (filter pred lst)
   (cond ((null? lst) '())
         ((pred (car lst))

@@ -1,0 +1,12 @@
+#lang racket
+(require sdraw)
+(define (append-test lhs rhs)
+  (if (empty? lhs)
+      rhs
+      (cons (car lhs) (append-test (cdr lhs) rhs))))
+(sdraw '(1 2) #:null-style '/)
+(sdraw '(3 4) #:null-style '/)
+(define rslt (append-test '(1 2) '(3 4)))
+(sdraw rslt #:null-style '/)
+(define lst (list '(1 2) '(3 4)))
+(sdraw lst #:null-style '/)
