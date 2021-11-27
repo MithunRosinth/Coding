@@ -32,6 +32,12 @@ void setup()
 
 void loop()
 {
+    // ping adafruit io a few times to make sure we remain connected
+  if(! mqtt.ping(3)) {
+    // reconnect to adafruit io
+    if(! mqtt.connected())
+      connect();
+  }
   MQTT_connect();
   Adafruit_MQTT_Subscribe * subscription;
   while ((subscription = mqtt.readSubscription(5000)))

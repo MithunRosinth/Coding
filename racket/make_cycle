@@ -1,6 +1,15 @@
 #lang racket
-;(require sr41)
+(require sdraw)
+(require rnrs/mutable-pairs-6)
+(require srfi/41)
+(define (last-pair x)
+  (if (null? (mcdr x))
+      x
+      (last-pair (mcdr x))))
 (define (make-cycle x)
   (set-cdr! (last-pair x) x))
+(define z1 (mcons (mcons 'a 'b) (mcons 'c 'd)))
+(mpair? z1)
+(define z (make-cycle z1))
 
-(define z (make-cycle (list 'a 'b 'c)))
+(sdraw z #:null-style '/)
